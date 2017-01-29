@@ -1,25 +1,16 @@
 version: '2'
 services:
-  httpd:
-    restart: always
-    image: httpd
-    ports:
-      - "80:80"
-    links:
-      - phpfpm:phpfpm
-    volumes:
-      - ./www:/url/local/apache2/htdocs
 
-  phpfpm:
+  php:
+    image: php:7-apache
     restart: always
-    build: ./php-fpm-7
     links:
       - db:dockerdb
     volumes:
-      - ./config/php-fpm/php-fpm.conf:/usr/local/etc/php-fpm.conf
-      - ./config/php-fpm/php.ini:/usr/local/etc/php/php.ini
-      - ./log/php-fpm:/var/log/php-fpm
-      - ./www:/url/local/apache2/htdocs
+      - ./www:/var/www/html
+    ports:
+      - 80:80
+
   db:
     restart: always
     image: mariadb:10.1
