@@ -1,6 +1,5 @@
 version: '2'
 services:
-
   php:
     image: php:7-apache
     restart: always
@@ -10,7 +9,6 @@ services:
       - ./www:/var/www/html
     ports:
       - 80:80
-
   db:
     restart: always
     image: mariadb:10.1
@@ -21,6 +19,3 @@ services:
       MYSQL_USER: user
       MYSQL_PASSWORD: password
       MYSQL_DATABASE: database
-    volumes:
-      - ./mysql/databases:/var/lib/mysql
-      - ./log/mysql:/var/log/mysql
