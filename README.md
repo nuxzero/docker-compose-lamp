@@ -1,6 +1,6 @@
-# Docker Compose for Wordpress
+# Docker Compose for LAMP stack
 
-The template for using Wordpress with Docker Compose.
+The template for using LAMP stack with Docker Compose.
 
 
 ## Installation
@@ -14,7 +14,7 @@ The template for using Wordpress with Docker Compose.
 
 ## Environments
 
-- nginx
+- apache
 - phpfpm
 - mysql
 
