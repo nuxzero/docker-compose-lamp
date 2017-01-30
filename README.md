@@ -5,10 +5,11 @@ The template for using LAMP stack with Docker Compose.
 
 ## Installation
 
+- Pull image `docker-compose pull`.
 - Install `docker-compose build` and `docker-compose up -d`.
 - Start all container `docker-compose start`.
 - Stop all container `docker-compose stop`.
-- Destry all container `docker-compose down`.
+- Destroy all container `docker-compose down`.
 - Shell to container `docker exec -it mysql sh` and `mysql -u user -p password`.
 
 
@@ -24,4 +25,4 @@ The template for using LAMP stack with Docker Compose.
 - `DATABASE_NAME=database`
 - `DATABASE_HOST=dockerdb`
 - `USER=root`
-- `PASSWORD=123456`
+- `PASSWORD=root`

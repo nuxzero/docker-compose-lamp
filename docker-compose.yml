@@ -1,21 +1,24 @@
 version: '2'
 services:
   php:
-    image: php:7-apache
+    build: ./php
     restart: always
-    links:
-      - db:dockerdb
+    ports:
+      - '80:80'
     volumes:
       - ./www:/var/www/html
+    links:
+    - db:dockerdb
     ports:
-      - 80:80
+    - 8080:80
+      
   db:
+    build: ./mysql
     restart: always
-    image: mariadb:10.1
     ports:
       - "3306:3306"
     environment:
-      MYSQL_ROOT_PASSWORD: 123456
-      MYSQL_USER: user
-      MYSQL_PASSWORD: password
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: 1234
       MYSQL_DATABASE: database
