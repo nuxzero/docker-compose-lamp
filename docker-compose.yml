@@ -8,10 +8,10 @@ services:
     volumes:
       - ./www:/var/www/html
     links:
-    - db:dockerdb
+      - db:dockerdb
     ports:
-    - 8080:80
-      
+      - 8080:80
+
   db:
     build: ./mysql
     restart: always
