@@ -3,8 +3,6 @@ services:
   php:
     build: ./php
     restart: always
-    ports:
-      - '80:80'
     volumes:
       - ./www:/var/www/html
     links:
